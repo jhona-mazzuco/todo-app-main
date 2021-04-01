@@ -1,7 +1,10 @@
-import '@styles/reset.css'
+import '@styles/reset.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import React from 'react';
 
-export default MyApp
+const MyApp = ({
+  Component,
+  pageProps,
+}) => <Component {...pageProps} />;
+
+export default MyApp;
