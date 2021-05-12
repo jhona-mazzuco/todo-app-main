@@ -1,0 +1,10 @@
+html,
+body,
+body > div:first-child,
+div#__next,
+div#__next > div {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Josefin Sans', sans-serif;
+  height: 100%;
+}

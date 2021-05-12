@@ -1,0 +1,80 @@
+@import "variables";
+
+.task {
+  width: 550px;
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+
+  .checkbox {
+    width: 28px;
+    height: 28px;
+    display: block;
+    background: $darkGrayishBluePrimary;
+    border-radius: 25px;
+    transition: 500ms background;
+
+    :before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background: url("/images/icon-check.svg");
+      position: relative;
+      left: 9px;
+      top: 6px;
+    }
+
+    :after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      color: transparent;
+      border-radius: 25px;
+      background: var(--bg-checkbox-color);
+      padding: 12px;
+      margin-top: 2px;
+      margin-left: -8px;
+    }
+
+    &:hover {
+      background: $checkBackground;
+      cursor: pointer;
+    }
+
+    &--disabled {
+      &:hover {
+        background: $darkGrayishBluePrimary !important;
+        cursor: default;
+      }
+    }
+  }
+
+  input, b {
+    width: 500px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 20px;
+    font-family: $fontDefault;
+    caret-color: $brightBlue;
+    color: var(--font-color);
+  }
+
+  &--checked {
+    .checkbox {
+      background: $checkBackground;
+
+      :after {
+        display: none;
+      }
+    }
+
+    b {
+      color: #777a92 !important;
+      text-decoration: line-through;
+    }
+  }
+}

@@ -1,0 +1,3 @@
+const TASKS_STORAGE_KEY = 'TASKS_STORAGE';
+
+export default TASKS_STORAGE_KEY;

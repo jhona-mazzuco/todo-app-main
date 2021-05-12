@@ -1,0 +1,141 @@
+@import "variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--bg-color);
+  height: 100vh;
+
+  &:after {
+    content: "";
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: var(--bg-image);
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+
+    .content {
+      &__header {
+        margin: 50px 0 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+          color: $veryLightGray;
+          font-family: $fontDefault;
+          font-size: 35px;
+          letter-spacing: 15px;
+        }
+
+        button {
+          cursor: pointer;
+          background: transparent;
+          border: 0;
+          outline: 0;
+        }
+      }
+
+      &__form {
+        background: var(--bg-task-color);
+        border-radius: 6px;
+      }
+
+      &__list {
+        margin-top: 50px;
+
+        li {
+          border-top: 1px solid $veryDarkGrayishBlueSecondary;
+
+          &:first-child {
+            border: 0;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+          }
+        }
+
+        .list {
+          &__item {
+            background: var(--bg-task-color);
+          }
+
+          &__footer {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            background: var(--bg-task-color);
+            color: $darkGrayishBlueSecondary;
+            font-family: $fontDefault;
+            padding: 25px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+
+            .footer {
+              &__filter {
+                .filter {
+                  &__item {
+                    display: inline-flex;
+                    user-select: none;
+                    border: 0;
+                    margin: 0 8px;
+
+                    &:hover {
+                      cursor: pointer;
+                      color: var(--font-hover-color);
+                    }
+
+                    &--activated {
+                      color: $brightBlue;
+                    }
+                  }
+                }
+              }
+
+              &__clear {
+                cursor: pointer;
+
+                &:hover {
+                  color: var(--font-hover-color);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 600px;
+
+    &:after {
+      width: 600px;
+    }
+
+    &__content {
+      padding: 0 10px;
+
+      .content {
+        &__form {
+          .task {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+}

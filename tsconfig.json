@@ -20,7 +20,12 @@
     "jsx": "preserve",
     "paths": {
       "@styles/*": ["styles/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@states/*": ["states/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@constants/*": ["constants/*"],
+      "@types/*": ["types/*"],
+      "@enums/*": ["enums/*"]
     }
   },
 
