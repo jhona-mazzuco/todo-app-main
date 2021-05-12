@@ -1,6 +1,6 @@
 import Task from 'class/task.class';
 import { AnyAction } from 'redux';
-import { FilterTask } from '../../enums/filter-task.enum';
+import { TaskFilter } from '@enums/task-filter.enum';
 
 export const GET = 'GET';
 export const GET_FILTERED = 'GET_FILTERED';
@@ -12,7 +12,7 @@ export const get = (): AnyAction => ({
   type: GET,
 });
 
-export const getFiltered = (filter: FilterTask): AnyAction => ({
+export const getFiltered = (filter: TaskFilter): AnyAction => ({
   type: GET_FILTERED,
   payload: filter,
 });
